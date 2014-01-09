@@ -1,0 +1,24 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#ID</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for org in orgs %}
+            <tr>
+                <td><a href="/edit/{{ org.id }}">{{ org.id }}</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td align="center">No organizations available</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
